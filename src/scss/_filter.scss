@@ -1,0 +1,339 @@
+.wrap-filter {
+	background-color: #fff;
+	height: auto;
+	.filter-menu {
+		@include container;
+		height: auto;
+		background-color: #fff;
+		box-shadow: 0 1px $shadowColor;
+		padding: 0 5px;
+	}
+}
+@include breakpoint($small) {
+	%vertical-align {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.selection {
+		@include span(12 last);
+		height: 35px;
+		padding: 10px 0 6px;
+		text-align: center;
+		ul {
+			font-size: .8em;
+			font-family: $fontMedium;
+			font-weight: normal;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			li {
+				display: inline-block;
+				text-transform: uppercase;
+				margin-right: 6%;
+				&:last-of-type {
+					margin-right: 0;
+				}
+				&:active a {
+					color: $red;
+				}
+				&.active a {
+					color: $red;
+				}
+			}
+		}
+	}
+	.cities {
+		@include span(5); 
+		height: 46px;
+		padding: 0;
+		display: flex;
+  	justify-content: center;
+  	align-items: center;
+		.cities-wrap {
+			position: relative;
+			.main-city {
+				display: inline-block;
+				position: relative;
+				height: 30px;
+				width: 110px;
+				border: 1px solid $fontLightgray;
+				border-radius: 20px;
+				text-align: left;
+				padding: 0 15px;
+				box-sizing: border-box;
+				vertical-align: middle;
+				overflow: hidden;
+				&.focus {
+					border-color: $red;
+				}
+				.city {
+					display: inline-block;
+					width: 100%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					text-transform: uppercase;
+					color: $red;
+					font-size: .7em;
+					line-height: 30px;
+				};
+				&::after {
+					@extend %vertical-align;
+					font-size: .7em;
+					font-family: 'FontAwesome';
+					content: '\F078';
+					position: absolute;
+					right: 10px;
+				}
+			}
+			ul {
+				display: none;
+				background-color: #fff;
+				position: absolute;
+				top: 34px;
+				font-size: .8em;
+				font-family: $fontMedium;
+				font-weight: normal;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				width: auto;
+				box-sizing: border-box;
+				border: 1px solid $fontLightgray;
+				border-radius: 4px;
+				text-align: left;
+				z-index: 100;
+				li {
+					width: auto;
+//					padding: 0 5px;
+					border-top: 1px solid $fontLightgray;
+					min-width: 110px;
+					&:first-child {
+						border-top: none;
+					}
+					a {
+						display: block;
+						margin-left: 5px;
+						line-height: 28px;
+						text-transform: none;
+						&:active {
+							color: $red;
+						}
+					}
+				}
+			}
+		}
+	}
+	.filter {
+		@include span(7 last);		
+		height: 46px;
+		padding: 0;
+		text-align: center;
+		display: flex;
+  	justify-content: center;
+  	align-items: center;
+		span {
+			display: none;
+		};
+		ul {
+			display: inline-block;
+			vertical-align: middle;
+			height: 30px;
+			width: 100%;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			li {
+				display: inline-block;
+				margin-right: 2px;
+				&:last-of-type {
+					margin-right: 0;
+				}
+				@include breakpoint(500px) {
+					margin-right: 3%;
+				}				
+				a {
+					display: block;
+					height: 30px;
+					width: 30px;
+					background-color: $gray;
+					border-radius: 20px;
+					box-sizing: border-box;
+					&#filtReal {
+						background: url('../img/Reality.png') 49% 40% no-repeat,
+												$green;
+						background-size: 70%;
+					}
+					&#filtLiv {
+						background: url('../img/Living.png') 50% 45% no-repeat,
+												$gray;
+						background-size: 50%;
+					}
+					&#filtEdu {
+						background: url('../img/Education.png') 49% 45% no-repeat,
+												$gray;
+						background-size: 70%;
+					}
+					&#filtEnt {
+						background: url('../img/Entertainment.png') 49% 45% no-repeat,
+												$orange;
+						background-size: 50%;
+					}
+					&#filtMob {
+						background: url('../img/Mobility.png') 49% 45% no-repeat,
+												$purple;
+						background-size: 50%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include breakpoint($medium) {
+	.selection {
+		@include span(4);
+		text-align: left;
+		padding: 15px 0;
+		padding-left: 5px;
+		height: 46px;
+		font-size: 0.9em;
+		ul {
+			li {
+				margin-right: 12px;
+			}
+		}
+		a:hover {
+			border-bottom: 1px solid $red;
+		}
+	}
+	.cities {
+		@include span(4);
+		text-align: left;
+		padding: 6px 0;
+		height: 46px;
+		.main-city:hover {
+			border-color: $red;
+		}
+	}
+	.filter {
+		@include span(4 last);
+		height: 46px;
+		text-align: right;
+		padding-left: 0;
+		justify-content: flex-end;
+		span {
+			display: inline;
+			text-transform: uppercase;
+			font-size: .7em;
+			margin-right: 5px;
+			vertical-align: middle;
+		};
+		ul {
+			vertical-align: middle;
+			display: inline-block;
+			width: auto;
+			li {
+				margin-right: 5px;
+				&:last-child {
+					margin-right: 0;
+				}				
+			}
+		}
+		
+	}
+};
+
+@include breakpoint($large) {
+	.selection {
+		@include span(5);
+		text-align: left;
+		height: 60px;
+		padding: 0;
+		ul {
+			@extend %vertical-align;
+			font-size: .9em;
+			li {
+				margin-right: 20px;
+			}
+		}
+	}
+	.cities {
+		@include span(2);
+		height: 60px;
+		padding: 0;
+		.main-city {
+			cursor: pointer;	
+			height: 40px;
+			width: 150px;
+			.city {
+				font-size: .8em;
+				line-height: 38px;
+			}
+		}
+		ul {
+			top: 85%;
+			cursor: pointer;
+			width: 150px;
+			li {
+				&:hover {
+					background-color: rgba($red, 0.7);
+					a {
+						color: #fff;						
+					}
+				}
+			}
+		}
+	}
+	.filter {
+		@include span(5 last);
+		height: 60px;
+		line-height: 60px;
+		span {
+			display: inline-block;
+			font-size: .8em;
+			margin-right: 10px;
+		}
+		ul {
+			height: 40px;
+			vertical-align: middle;
+			li {
+				margin-right: 10px;
+				&:last-child {
+					margin-right: 0;
+				}
+				a {
+					height: 40px;
+					width: 40px;
+					box-shadow: none;
+					transition: all 0.2s ease 0s;
+					&:hover {
+						box-shadow: 0 0 3px 3px rgba(black, 0.2);
+					}
+					&:active {
+						box-shadow: 0 0 3px 10px rgba(black, 0.1);						
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

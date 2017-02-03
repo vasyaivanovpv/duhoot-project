@@ -1,0 +1,576 @@
+.content {
+	@include container(12);
+	height: auto;
+	background-color: $backgroundColor;
+	border-bottom: 1px solid $shadowColor;
+	padding: 15px 0 20px;
+}
+
+@include breakpoint($small) {
+	.content {
+		padding: 15px 0;		
+	}
+	.item {
+		@include span(12 of 12 split);
+		margin-bottom: gutter(40px);
+		background-color: white;	
+		height: 360px;
+		border-radius: 5px;
+		overflow: hidden;
+		box-shadow: 0 1px rgba($shadowColor, 1);
+		box-sizing: border-box;
+		position: relative;
+		.view {
+			position: relative;
+			height: 55%;
+			border-bottom: 4px solid $green;
+			box-sizing: border-box;
+			margin-bottom: 50px;			
+			img {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+			.price {
+				display: inline-block;
+				position: absolute;
+				border-radius: 20px;
+				width: 80px;
+				padding: 8px;
+				background-color: $green;
+				top: 10px;
+				right: 10px;
+				color: white;
+				text-align: center;
+				font-family: $fontMedium;
+			}
+			.show-search,
+			.show-more,
+			.show-comments {
+				display: none;
+			}
+			
+		}		
+		.mark {
+			box-sizing: border-box;
+			width: 80px;
+			height: 80px;
+			border: 4px solid white;
+			border-radius: 40px;
+			background: url('../img/Reality.png') no-repeat 50% 44%,
+									$green;
+			background-size: 50%;
+			position: absolute;
+			top: 55%;
+			left: 50%;
+			margin: 0 auto;
+			transform: translate(-50%, -50%);			
+		}		
+		h3 {
+			margin: 10px 20px;
+			text-align: center;
+			font-family: $fontMedium;
+			font-weight: normal;
+			font-size: 1.2em;
+			a {
+				text-transform: none;
+				color: $fontNavygray;
+			}
+		}
+		.brief {
+			position: absolute;
+			bottom: 10px;
+			text-align: center;
+			left: 50%;
+			transform: translateX(-50%);
+			height: auto;
+			width: 100%;
+			.caption {
+				display: block;
+				font-family: $fontMedium;
+				color: $green;
+				text-transform: uppercase;
+				font-size: 1em;
+			}
+			.rate {
+				color: $orange;
+				font-size: 1.2em;
+				vertical-align: middle;
+			}
+			.amount {
+				vertical-align: baseline;
+				font-size: 0.9em;
+				color: $fontLightgray;
+			}
+		}
+	}
+	
+	.real {
+		.view {
+			border-color: $green;
+		}
+		.mark {
+			background: url('../img/Reality.png') no-repeat 50% 44%,
+								$green;
+			background-size: 50%;
+		}
+		.brief {
+			.caption {
+				color: $green;
+			}
+		}
+	}
+	.liv {
+		.view {
+			border-color: $gray;
+		}
+		.mark {
+			background: url('../img/Living.png') no-repeat 50% 44%,
+								$gray;
+			background-size: 40%;
+		}
+		.brief {
+			.caption {
+				color: $gray;
+			}
+		}
+	}
+	.edu {
+		.view {
+			border-color: $gray;
+		}
+		.mark {
+			background: url('../img/Education.png') no-repeat 50% 50%,
+								$gray;
+			background-size: 50%;
+		}
+		.brief {
+			.caption {
+				color: $gray;
+			}
+		}
+	}
+	.ent {
+		.view {
+			border-color: $orange;
+		}
+		.mark {
+			background: url('../img/Entertainment.png') no-repeat 45% 46%,
+								$orange;
+			background-size: 44%;
+		}
+		.brief {
+			.caption {
+				color: $orange;
+			}
+		}
+	}
+	.mob {
+		.view {
+			border-color: $purple;
+		}
+		.mark {
+			background: url('../img/Mobility.png') no-repeat 50% 50%,
+								$purple;
+			background-size: 44%;
+		}
+		.brief {
+			.caption {
+				color: $purple;
+			}
+		}
+	}
+	
+	.review {
+		.view {
+			height: 40%;
+			margin-bottom: 60px;
+			img {
+				height: 100%;
+			}
+			.price {
+				display: none;				
+			}
+		}	
+		.mark {
+			top: 40%;
+			left: 40px+20px;
+		}
+		.brief {
+			top: 28%;
+			left: 115px;
+			bottom: auto;
+			width: auto;
+			text-align: left;
+			transform: none;
+			
+			.caption {
+				color: white;
+				text-shadow: 0 1px 1px black;
+				font-size: 0.9em;
+			}
+			.rate {
+				font-size: 0.9em;
+			}
+			.amount {
+				font-size: 0.8em;
+				color: white;
+			}			
+		}
+		.user-rate {
+			position: absolute;
+			top: 45%;
+			left: 110px;
+			color: $orange;
+			font-size: 1.6em;
+		}
+		.user-review {
+			.user-avatar {
+				display: inline-block;
+				float: left;
+				margin-left: 20px;
+				margin-right: 15px;
+				box-sizing: border-box;
+				width: 80px;
+				height: 80px;
+				img {
+					width: 80px;
+					height: 80px;
+				}
+			}
+			.username {
+				display: block;
+				font-family: $fontBold;
+				text-transform: uppercase;
+				color: $fontNavygray;
+				margin-bottom: 10px;
+			}
+			.cut-review {
+				display: inline-block;
+				font-family: $fontBook;
+				color: $fontNavygray;
+				font-size: 0.9em;
+				float: left;
+				min-width: 100px;
+				width: 60%;
+				margin-right: 10px;
+				line-height: 1.3em;
+				.read-more {
+					text-transform: none;
+					font-family: $fontMedium;
+					color: rgba($fontNavygray, 1);
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	
+	.more {
+		@include span(12 last);
+		text-align: center;
+		a {
+			text-transform: none;
+			.lead {
+			color: $fontNavygray;
+			font-size: 0.9em;
+			text-decoration: underline;		
+			}
+			span {
+				color: $fontNavygray;
+			}
+		}		
+	}
+}
+
+@include breakpoint($medium) {
+	.content {
+		padding: 15px 10px 20px;
+	}
+	.item {
+		margin-bottom: gutter(40px);
+		@include span(6 of 12 split);
+	}
+	.review {
+		@include span(12 of 12 split);		
+		.mark {
+			left: 100px;
+		}
+		.brief {
+			top: 110px;
+			left: 155px;
+			.caption {
+				display: inline;
+				font-size: 1.2em;
+			}
+			.rate {
+				font-size: 1.2em;
+				vertical-align: baseline;
+			}
+			.amount {
+				font-size: 1em;
+			}
+		}
+		.user-rate {
+			top: 154px;
+			left: 150px;
+			font-size: 2em;
+		}
+		.user-review {
+			.user-avatar {
+				margin-left: 100px-40px;				
+			}
+			.username {
+				font-size: 1.2em;
+			}
+			.cut-review {
+				width: 70%;
+				font-size: 1.2em;
+			}
+		}
+	}
+}
+
+@include breakpoint($large) {
+	.item {
+		@include span(3 of 12 split);
+		@include gutters(34px split);
+		height: 270px;
+		width: 210px;
+		.view {
+			height: 140px;
+			margin-bottom: 34px;
+			.price {
+				top: 8px;
+				right: 8px;
+				height: 24px;
+				width: 64px;
+				font-size: (12 / 16) * 1em;
+				padding: 0;
+				line-height: 24px;
+			}								
+		}
+		.mark {
+			top: 140px;
+			width: 60px;
+			height: 60px;
+		}
+		h3 {
+			font-size: 14/16 * 1em;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		.brief {
+//			width: auto;
+			.caption, 
+			.rate, 
+			.amount {
+				font-size: 12/16 * 1em;
+			}			 
+		}
+		&:hover {
+			box-shadow: 0 0 5px 5px rgba($shadowColor, 1);
+			.view-hover {
+				position: absolute;
+				top: 0;				
+				height: 100%;
+				width: 100%;				
+				background-color: rgba($green, 0.7);
+				transition: background-color 0.3s linear 0s;
+			}
+			.show-more {
+				display: inline-block;
+				position: absolute;
+				top: 20px;
+				left: 210px/2 - 136px/2;
+				box-sizing: border-box;
+				height: 34px;
+				width: 136px;
+				border: 2px solid white;
+				border-radius: 15px;
+				background-color: $green;
+				line-height: 32px;
+				font-size: 12/16 * 1em;
+				text-transform: uppercase;
+				color: white;
+				text-align: right;
+				padding-right: 15px;
+				cursor: pointer;
+				&::before {
+					content: '\F002';
+					font-family: "fontAwesome";
+					margin-right: 10px;
+				}
+				&::after {
+					content: '\F0E6';
+					font-family: "fontAwesome";
+					position: absolute;
+					top: 40px;
+					font-size: 24px;
+					left: 40%;
+					cursor: pointer;					
+				}
+			}
+		}
+		&.real:hover {
+			.view-hover {
+				background-color: rgba($green, 0.7);
+			}
+			.show-more {
+				background-color: $green;
+			}
+		}
+		&.liv:hover {
+			.view-hover {
+				background-color: rgba($gray, 0.7);
+			}
+			.show-more {
+				background-color: $gray;
+			}
+		}
+		&.edu:hover {
+			.view-hover {
+				background-color: rgba($gray, 0.7);
+			}
+			.show-more {
+				background-color: $gray;
+			}
+		}
+		&.ent:hover {
+			.view-hover {
+				background-color: rgba($orange, 0.7);
+			}
+			.show-more {
+				background-color: $orange;
+			}
+		}
+		&.mob:hover {
+			.view-hover {
+				background-color: rgba($purple, 0.7);
+			}
+			.show-more {
+				background-color: $purple;
+			}
+		}
+	}
+	.review {
+		@include span(6 of 12 split);
+		@include gutters(34px split);
+		width: 452px;
+		.view {
+			height: 120px;
+			margin-bottom: 50px;
+		}
+		.mark {
+			top: 120px;
+			left: 20px + 30px;
+		}
+		.brief {
+			top: 90px;
+			left: 80px + 16px;
+			.caption {
+				font-size: 18/16 * 1em;
+			}
+			.rate {
+				font-size: 14/16 * 1em;
+				vertical-align: bottom;
+			}
+			.amount {
+				font-size: 12/16 * 1em;
+			}
+		}
+		.user-rate {
+			top: 130px;
+			left: 94px;
+			font-size: 26/16 * 1em;
+			
+		}
+		.user-review {
+			.user-avatar {
+				height: 60px;
+				width: 60px;
+				margin-left: 20px;
+				img {
+					height: 60px;
+					width: 60px;
+				}
+			}
+			.username {
+				font-size: 18/16 * 1em;
+			}
+			.cut-review {
+				font-size: 14/16 * 1em;
+				.read-more {
+					position: absolute;
+					text-decoration: underline;
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+	.more {
+		margin: 15px auto;
+		a .lead {
+			font-size: 18/16 * 1em;
+			&:hover {
+				text-decoration: none;
+			}
+		}		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

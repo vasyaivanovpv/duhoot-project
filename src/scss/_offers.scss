@@ -1,0 +1,468 @@
+.offers {
+	@include container();
+	padding: 30px 10px;
+	text-align: center;
+}
+
+@include breakpoint($small) {
+	.offers__quest {
+		font-size: 1.2em;
+		font-weight: normal;
+		margin: 0;
+		color: $fontNavygray;
+		font-family: $fontMedium;
+	}
+	.offers__descr {
+		font-family: $fontBook;
+		font-size: 0.8em;
+		color: $fontLightgray;
+	}
+	.radios {
+		background-color: #red;
+		margin: 20px auto;
+		padding: 0;
+		position: relative;
+		&::before {
+			@include squish(2, 2);
+			@include span(8);
+			content: '';
+			display: block;
+			position: absolute;
+			top: 20px;
+			height: 2px;
+			background-color: $shadowColor;
+			@include breakpoint(430px) {
+				@include squish(3, 3);
+				@include span(6);
+			}
+			@include breakpoint(570px) {
+				@include squish(4, 4);
+				@include span(4);	
+			}
+		}
+		.radio {
+			z-index: 100;
+			position: relative;
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			background-color: $backgroundColor;
+			background-image: url('../img/sprite.png');
+			background-repeat: no-repeat;
+			border: 2px solid $fontLightgray;
+			border-radius: 25px;
+			margin-right: 10px;
+			background-size: 400px auto;
+			box-shadow: 0 0 0 4px $backgroundColor;
+			cursor: pointer;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		.radio-real {
+			background-position: 6px 4px;
+			&.radio-active {
+				border-color: $green;
+				background-position: 6px -45px;
+			}	
+			&:active {
+				border-color: $green;
+			}
+		}
+		.radio-liv {
+			background-position: -87px 6px;
+			&.radio-active {
+				border-color: $gray;
+			}
+			&:active {
+				border-color: $gray;
+			}
+		}
+		.radio-edu {
+			background-position: -181px 6px;
+			&.radio-active {
+				border-color: $gray;
+			}	
+			&:active {
+				border-color: $gray;
+			}
+		}
+		.radio-ent {
+			background-position: -274px 6px;
+			&.radio-active {
+				border-color: $orange;
+				background-position: -273px -44px;
+			}	
+			&:active {
+				border-color: $orange;
+			}
+		}
+		.radio-mob {
+			background-position: -368px 6px;
+			&.radio-active {
+				border-color: $purple;
+				background-position: -367px -43px;
+			}	
+			&:active {
+				border-color: $purple;
+			}
+		}		
+	}
+	.blocks {
+		animation: toPlace 0.3s, fade 0.8s;
+		h3 {
+			font-size: 1em;
+			margin-bottom: 5px;
+			font-weight: normal;
+			font-family: $fontMedium;
+		}
+		.block {
+			@include span(10 of 12);
+			@include push(2);
+			text-align: left;
+			font-size: 0.9em;
+			font-family: $fontBook;
+			position: relative;
+			&:first-of-type {
+				&::before {
+					position: absolute;
+					left: -45px;
+					content: '\F0E7';
+					font-family: 'fontAwesome';
+					font-size: 1.5em;
+					color: white;
+					width: 40px;
+					height: 40px;
+					border-radius: 25px;
+					text-align: center;
+					line-height: 40px;
+				}
+			}
+			&:last-of-type {
+				&::before {
+					position: absolute;
+					left: -45px;
+					content: '\F06C';
+					font-family: 'fontAwesome';
+					font-size: 1.5em;
+					color: white;
+					width: 40px;
+					height: 40px;
+					border-radius: 25px;
+					text-align: center;
+					line-height: 40px;
+				}
+			}	
+		}
+		&-real {
+			h3 {
+				color: $green;
+			}
+			.block {
+				&:first-of-type {
+					&::before {
+						background-color: $green;
+					}
+				}
+				&:last-of-type {
+					&::before {
+						background-color: $green;
+					}
+				}
+			}
+		}
+		&-liv {
+			display: none;			
+			h3 {
+				color: $gray;
+			}
+			.block {
+				&:first-of-type {
+					&::before {
+						background-color: $gray;
+					}
+				}
+				&:last-of-type {
+					&::before {
+						background-color: $gray;
+					}
+				}
+			}
+		}
+		&-edu {
+			display: none;		
+			h3 {
+				color: $gray;
+			}
+			.block {
+				&:first-of-type {
+					&::before {
+						background-color: $gray;
+					}
+				}
+				&:last-of-type {
+					&::before {
+						background-color: $gray;
+					}
+				}
+			}
+		}
+		&-ent {			
+			display: none;
+			h3 {
+				color: $orange;
+			}
+			.block {
+				&:first-of-type {
+					&::before {
+						background-color: $orange;
+					}
+				}
+				&:last-of-type {
+					&::before {
+						background-color: $orange;
+					}
+				}
+			}
+		}
+		&-mob {
+			display: none;
+			h3 {
+				color: $purple;
+			}
+			.block {
+				&:first-of-type {
+					&::before {
+						background-color: $purple;
+					}
+				}
+				&:last-of-type {
+					&::before {
+						background-color: $purple;
+					}
+				}
+			}
+		}
+		&-active {
+			display: block;
+			opacity: 1;
+			transform: translateX(0px);
+
+		}
+	}
+}
+
+@include breakpoint($medium) {
+	.offers__quest {
+		font-size: 1.7em;
+	}
+	.offers__descr {
+		font-size: 1em;
+	}
+	.slider {
+		.radios {
+			margin-bottom: 5px;
+			&::before {
+				top: 35px;
+				@include squish(3, 3);
+				@include span(6);
+			}
+			.radio {
+				width: 70px;
+				height: 70px;
+				border-radius: 40px;
+				margin-right: 30px;
+				background-size: 460px auto;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+			.radio-real {
+				background-position: 18px 16px;
+				&.radio-active {
+					background-position: 18px -42px;
+				}			
+			}
+			.radio-liv {
+				background-position: -89px 18px;
+				&.radio-active {
+				}			
+			}
+			.radio-edu {
+				background-position: -197px 18px;
+				&.radio-active {
+				}			
+			}
+			.radio-ent {
+				background-position: -304px 18px;
+				&.radio-active {
+					background-position: -304px -40px;
+				}			
+			}
+			.radio-mob {
+				background-position: -411px 18px;
+				&.radio-active {
+					background-position: -411px -39px;
+				}			
+			}	
+		}	
+		.blocks {
+			@include squish(2, 2);
+			@include span(8 nest);
+			h3 {
+				font-size: 1.2em;
+			}
+			.block {
+				@include span(6 of 12);
+				@include gutters(40px);
+				margin-left: 0;	
+				padding-left: 50px;
+				line-height: 1.4em;
+				&::before {
+					left: 0px;
+				}
+			}
+		}
+	}
+}
+
+@include breakpoint($large) {
+	.offers {
+		padding-top: 90px;
+	}
+	.offers__quest {
+		margin-bottom: 14px;
+		font-size: 22/16 * 1em;
+	}
+	.offers__descr {
+		font-size: 16/16 * 1em;
+	}
+	.slider {
+		.radios {
+			margin-top: 70px;
+			&:before {
+				@include span(8);
+				@include squish(2, 2);
+				top: 50px;
+			}
+			.radio {
+				width: 100px;
+				height: 100px;
+				border-radius: 60px;
+				margin-right: 56px;
+				background-size: 702px auto;
+				cursor: pointer;
+			}
+			.radio-real {
+				background-position: 24px 22px;
+				&:hover {
+					border-color: $green;
+				}
+				&.radio-active {
+					background-position: 25px -66px;
+				}			
+			}
+			.radio-liv {
+				background-position: -138px 22px;
+				&:hover {
+					border-color: $gray;
+				}
+				&.radio-active {
+				}			
+			}
+			.radio-edu {
+				background-position: -302px 22px;
+				&:hover {
+					border-color: $gray;
+				}
+				&.radio-active {
+				}			
+			}
+			.radio-ent {
+				background-position: -468px 22px;
+				&:hover {
+					border-color: $orange;
+				}
+				&.radio-active {
+					background-position: -467px -66px;
+				}			
+			}
+			.radio-mob {
+				background-position: -630px 22px;
+				&:hover {
+					border-color: $purple;
+				}
+				&.radio-active {
+					background-position: -629px -66px;
+				}			
+			}	
+		}
+		.blocks {
+			@include squish(1, 1);
+			@include span(10 nest);
+			h3 {
+				margin-top: 25px;
+				margin-bottom: 25px;
+				font-size: 24/16 * 1em;
+			}
+			.block {
+				@include span(6);
+				padding-left: 116px;
+				padding-right: 15px;
+				margin-bottom: 80px;
+				font-size: 14/16 * 1em;
+				line-height: 24px;
+				&::before {
+					left: 26px;
+					width: 60px;
+					height: 60px;
+					font-size: 30/16 * 1em;
+					border-radius: 30px;
+					line-height: 60px;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
