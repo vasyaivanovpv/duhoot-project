@@ -55,26 +55,32 @@ function setSelection(e) {
 		if (!selectFilter) {
 			selectSelection = currentSelect;
 		}
-		console.log(e.target);
+//		console.log(e.target);
 		
 		if (selectSelection == currentSelect) {
 			[].forEach.call(items, function(item) {
-				item.style.display = "none";
-				console.log(item.dataset.setSelection);
-				console.log(currentSelect);
-				console.log(item.dataset.setSelection === currentSelect);
-				if (item.dataset.setSelection === currentSelect) {
-					item.style.display = "block";
+//				item.style.display = "none";
+//				console.log(item.dataset.setSelection);
+//				console.log(currentSelect);
+//				console.log(item.dataset.setSelection === currentSelect);
+				var computedStyleDispl = getComputedStyle(item).display;
+//				console.log(computedStyleDispl);
+				if (computedStyleDispl == "block" && item.dataset.setSelection 
+						!== currentSelect) {
+					item.style.display = "none";
+//					console.log("1");
+				} else {
+//					console.log("2");
+					item.style.display = "block";					
 				}
 			})			
 		} else if (selectSelection !== currentSelect) {
 //			console.log("not equal");
 			[].forEach.call(items, function(item) {
-				if (item.classList.contains(currentSelect)) {
+				item.style.display = "none";
+				if (item.dataset.setSelection === currentSelect) {
 					item.style.display = "block";
-				} else {
-					item.style.display = "none";
-				} 
+				}
 			})
 		}	
 		selectSelection = currentSelect;
@@ -121,6 +127,7 @@ function changeSlide(e) {
 //set filter
 filters.addEventListener("click", setFilter, false);
 var selectFilter;
+//console.log(selectFilter);
 function setFilter(e) {
 	var items = document.getElementsByClassName("item");
 	var currentFilter = e.target.dataset.filter;
@@ -129,22 +136,22 @@ function setFilter(e) {
 			selectFilter = currentFilter;			
 		} 
 		var findItems = document.getElementsByClassName(selectFilter);
-		var computedStyleDispl;
+//		var computedStyleDispl;
 		if (selectFilter == currentFilter) {
-//			console.log("equally");
+			console.log("equally");
 			[].forEach.call(items, function(item) {
 //				var hasFilter = item.dataset.hasFilter;
-				computedStyleDispl = getComputedStyle(item).display;
+				var computedStyleDispl = getComputedStyle(item).display;
 				if (computedStyleDispl == "block" && !item.classList.contains(selectFilter)) {
-//					console.log("1");
+					console.log("1");
 					item.style.display = "none";
 				} else {
-//					console.log("2");
+					console.log("2");
 					item.style.display = "block";
 				} 
 			})
 		} else if (selectFilter !== currentFilter) {
-//			console.log("not equal");
+			console.log("not equal");
 			[].forEach.call(items, function(item) {
 				if (item.classList.contains(currentFilter)) {
 					item.style.display = "block";
