@@ -7,13 +7,15 @@ autoprefixer    = require('gulp-autoprefixer'),
 plumber         = require('gulp-plumber'),
 del             = require('del'),
 rename          = require('gulp-rename'),
-sourcemaps      = require('gulp-sourcemaps');
+sourcemaps      = require('gulp-sourcemaps'),
+uglify					= require('gulp-uglify');
 
 var config = {
   scss    :[ 'src/scss/**/*.scss' ],
   css     :[ 'src/css/' ],
+	js			:[ 'src/js/' ],
   html    :[ 'src/**/*.html' ],
-	js			:[ 'src/js/*.js'],
+	jsfiles	:[ 'src/js/*.js'],
   build   :[ 'build/' ],
   src     :[ 'src/' ]
 };
@@ -38,7 +40,10 @@ gulp.task('html', function(){
 });
 
 gulp.task('js', function() {
-	return gulp.src(config.js)
+	return gulp.src(config.js + '!(*.min.js)')
+		.pipe(uglify())
+		.pipe(rename({suffix: '.min'}))
+		.pipe(gulp.dest(''+config.js+''))
 		.pipe(reload({stream:true}));
 })
 
@@ -59,8 +64,7 @@ gulp.task('build:create', function(){
 
 // Очистка папки build
 gulp.task('build:clean',['build:create'], function(){
-  return del(['build/bower_components/',
-              'build/scss/',
+  return del(['build/scss/',
               'build/css/!(*.min.css)',
               'build/js/!(*.min.js)'
             ]);
@@ -87,7 +91,7 @@ gulp.task('build', ['build:create', 'build:clean']);
 gulp.task('watch', function(){
   gulp.watch(config.scss, ['styles']);
   gulp.watch(config.html, ['html']);
-	gulp.watch(config.js, ['js']);
+	gulp.watch(config.jsfiles, ['js']);
 });
 
 gulp.task('default', ['watch', 'browserSync', 'html', 'styles',  'js']);
