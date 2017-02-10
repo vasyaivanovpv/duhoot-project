@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0">
+	<title>duhoot</title>
+	<link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+<!--HEADER STRAT-->
+	<div class="wrap-header" id="wrapHeader">
+		<div class="bg">
+			<header class="header-site">
+				<div class="logo">
+					<a href="index.html"><img src="img/logo.png" alt="logo"></a>
+				</div>
+				<div class="menu" id="menu">
+					<div class="container" onclick="toggleMenu(this)">
+						<div class="bar1"></div>
+						<div class="bar2"></div>
+						<div class="bar3"></div>
+					</div>					
+				</div>
+				<nav class="nav-site" id="navSite">
+					<ul>
+						<li><a href="#">Reality</a></li>
+						<li><a href="#">Living</a></li>
+						<li><a href="#">Education</a></li>
+						<li><a href="#">Entertainment</a></li>
+						<li><a href="#">Mobility</a></li>
+					</ul>
+				</nav>
+				<div class="login" id="login">
+					<a href="#">Login</a>
+				</div>
+				<div class="search">
+					<h2>What are you looking for?</h2>
+					<form action="#">
+						<select name="city">
+							<option value="Dubai">Dubai</option>
+							<option value="London">London</option>
+							<option value="New-York">New-York</option>
+						</select>
+						<select name="heading">
+							<option value="Reality">Reality</option>
+							<option value="Living">Living</option>
+							<option value="Education">Education</option>
+							<option value="Entertainment">Entertainment</option>
+							<option value="Mobility">Mobility</option>							
+						</select>
+						<input type="text" placeholder="Keyword, name, date, ...">
+						<input type="button" value="Search">
+					</form>
+				</div>
+			</header>	
+		</div>
+	</div>
+<!--	HEADER END-->
+<!--FILTER START-->
+	<div class="wrap-filter">
+		<nav class="filter-menu" id="filterMenu">
+			<div class="selection" id="selection">
+				<ul>
+					<li class="active"><a data-scroll href="#filterMenu" data-selection="recommended">Recommended</a></li>
+					<li><a data-scroll href="#filterMenu" data-selection="latest">Latest</a></li>
+					<li><a data-scroll href="#filterMenu" data-selection="highlights">Highlights</a></li>
+				</ul>
+			</div>
+			<div class="cities">
+				<div class="cities-wrap">
+					<div class="main-city" id="mainCity" onclick='toggleList(this)'>
+						<span class="city" id="filterCity">Dubai</span>
+					</div>
+					<ul id="listCity">
+						<li><a data-scroll href="#filterMenu">Dubai</a></li>
+						<li><a data-scroll href="#filterMenu">London</a></li>
+						<li><a data-scroll href="#filterMenu">New-York</a></li>
+					</ul>					
+				</div>
+			</div>
+			<div class="filter">
+				<span>Filter:</span>
+				<ul id="filters">
+					<li><a data-scroll href="#filterMenu" id="filtReal" data-filter="real"></a></li>
+					<li><a data-scroll href="#filterMenu" id="filtLiv" data-filter="liv"></a></li>
+					<li><a data-scroll href="#filterMenu" id="filtEdu" data-filter="edu"></a></li>
+					<li><a data-scroll href="#filterMenu" id="filtEnt" data-filter="ent"></a></li>
+					<li><a data-scroll href="#filterMenu" id="filtMob" data-filter="mob"></a></li>
+				</ul>
+			</div>
+		</nav>				
+	</div>
+<!--	FILTER END-->
+<!--CONTENT START-->
+	<section class="content">
+		<div class="item real" data-set-selection="recommended" data-has-filter="real">
+			<div class="view">
+				<img src="img/real-1.jpg" alt="2 bedroom house for rent in Dubai">
+				<span class="price">$2,990</span>
+				<div class="view-hover">
+					<a href="#" class="show-more">Show more</a>					
+				</div>
+			</div>
+			<div class="mark"></div>
+			<h3><a href="#">2 bedroom house for rent in Dubai</a></h3>
+			<div class="brief">
+				<span class="caption">Vision Agency</span>
+				<span class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+				<span class="amount">(365)</span>				
+			</div>
+		</div>
+		<div class="item ent" data-set-selection="recommended" data-has-filter="ent">
+			<div class="view">
+				<img src="img/entl-1.jpg" alt="Beach party festival 2014">
+				<div class="view-hover">
+					<a href="#" class="show-more">Show more</a>					
+				</div>
+			</div>
+			<div class="mark"></div>
+			<h3><a href="#">Beach party festival 2014</a></h3>
+			<div class="brief">
+				<span class="caption">Long beach</span>
+				<span class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+				<span class="amount">(1165)</span>				
+			</div>
+		</div>
+		<div class="item mob" data-set-selection="recommended" data-has-filter="mob">
+			<div class="view">
+				<img src="img/real-1.jpg" alt="Aliquam quis pulvinar purus">
+				<div class="view-hover">
+					<a href="#" class="show-more">Show more</a>					
+				</div>
+			</div>
+			<div class="mark"></div>
+			<h3><a href="#">Aliquam quis pulvinar purus</a></h3>
+			<div class="brief">
+				<span class="caption">Bus Trans</span>
+				<span class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+				<span class="amount">(365)</span>				
+			</div>
+		</div>
+		<div class="item real" data-set-selection="latest" data-has-filter="real">
+			<div class="view">
+				<img src="img/real-2.jpg" alt="4 bedroom house for rent in Dubai">
+				<span class="price">$2,990</span>
+				<div class="view-hover">
+					<a href="#" class="show-more">Show more</a>					
+				</div>
+			</div>
+			<div class="mark"></div>
+			<h3><a href="#">4 bedroom house for rent in Dubai</a></h3>
+			<div class="brief">
+				<span class="caption">Reality Agency</span>
+				<span class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+				<span class="amount">(165)</span>				
+			</div>
+		</div>		
+		<div class="item real review" data-has-filter="real">
+			<div class="view">
+				<img src="img/real-review-1.jpg" alt="Skybox club">
+			</div>
+			<div class="mark"></div>
+			<div class="brief">
+				<span class="caption">Vision Agency</span>
+				<span class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+				<span class="amount">(365)</span>				
+			</div>
+			<span class="user-rate">&#9733;&#9733;&#9733;&#9734;&#9734;</span>
+			<div class="user-review">
+				<div class="user-avatar">
+					<img src="img/user-id1.png" alt="Lucy-P">
+				</div>
+				<span class="username">Lucy-P</span>
+				<span class="cut-review">“Aliquam quis pulvinar purus. Etiam cursus ipsum quis enim faucibus, quis posuere orci ornare. Duis mattis sagittis fringilla.” <a href="#" class="read-more">...read more</a></span>
+			</div>
+		</div>
+		<div class="item ent review" data-has-filter="ent">
+			<div class="view">
+				<img src="img/ent-review-1.jpg" alt="Skybox club">
+			</div>
+			<div class="mark"></div>
+			<div class="brief">
+				<span class="caption">Skybox club</span>
+				<span class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+				<span class="amount">(1365)</span>				
+			</div>
+			<span class="user-rate">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+			<div class="user-review">
+				<div class="user-avatar">
+					<img src="img/user-id2.png" alt="Lucy-P">
+				</div>
+				<span class="username">Peter145</span>
+				<span class="cut-review">“Aliquam quis pulvinar purus. Etiam cursus ipsum quis enim faucibus, quis posuere orci ornare. Duis mattis sagittis fringilla.” <a href="#" class="read-more">...read more</a></span>
+			</div>
+		</div>
+		<div class="item real" data-set-selection="recommended" data-has-filter="real">
+			<div class="view">
+				<img src="img/real-1.jpg" alt="2 bedroom house for rent in Dubai">
+				<span class="price">$2,990</span>
+				<div class="view-hover">
+					<a href="#" class="show-more">Show more</a>					
+				</div>
+			</div>
+			<div class="mark"></div>
+			<h3><a href="#">2 bedroom house for rent in Dubai</a></h3>
+			<div class="brief">
+				<span class="caption">Vision Agency</span>
+				<span class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+				<span class="amount">(365)</span>				
+			</div>
+		</div>
+		<div class="item ent" data-has-filter="ent">
+			<div class="view">
+				<img src="img/entl-1.jpg" alt="Beach party festival 2014">
+				<div class="view-hover">
+					<a href="#" class="show-more">Show more</a>					
+				</div>
+			</div>
+			<div class="mark"></div>
+			<h3><a href="#">Beach party festival 2014</a></h3>
+			<div class="brief">
+				<span class="caption">Long beach</span>
+				<span class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+				<span class="amount">(1165)</span>				
+			</div>
+		</div>
+		<div class="item mob" data-set-selection="recommended" data-has-filter="mob">
+			<div class="view">
+				<img src="img/real-1.jpg" alt="Aliquam quis pulvinar purus">
+				<div class="view-hover">
+					<a href="#" class="show-more">Show more</a>					
+				</div>
+			</div>
+			<div class="mark"></div>
+			<h3><a href="#">Aliquam quis pulvinar purus</a></h3>
+			<div class="brief">
+				<span class="caption">Bus Trans</span>
+				<span class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+				<span class="amount">(365)</span>				
+			</div>
+		</div>
+		<div class="item real" data-has-filter="real">
+			<div class="view">
+				<img src="img/real-2.jpg" alt="4 bedroom house for rent in Dubai">
+				<span class="price">$2,990</span>
+				<div class="view-hover">
+					<a href="#" class="show-more">Show more</a>					
+				</div>
+			</div>
+			<div class="mark"></div>
+			<h3><a href="#">4 bedroom house for rent in Dubai</a></h3>
+			<div class="brief">
+				<span class="caption">Reality Agency</span>
+				<span class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+				<span class="amount">(165)</span>				
+			</div>
+		</div>		
+		<div class="item real review" data-has-filter="real">
+			<div class="view">
+				<img src="img/real-review-1.jpg" alt="Skybox club">
+			</div>
+			<div class="mark"></div>
+			<div class="brief">
+				<span class="caption">Vision Agency</span>
+				<span class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+				<span class="amount">(365)</span>				
+			</div>
+			<span class="user-rate">&#9733;&#9733;&#9733;&#9734;&#9734;</span>
+			<div class="user-review">
+				<div class="user-avatar">
+					<img src="img/user-id1.png" alt="Lucy-P">
+				</div>
+				<span class="username">Lucy-P</span>
+				<span class="cut-review">“Aliquam quis pulvinar purus. Etiam cursus ipsum quis enim faucibus, quis posuere orci ornare. Duis mattis sagittis fringilla.” <a href="#" class="read-more">...read more</a></span>
+			</div>
+		</div>
+		<div class="item ent review" data-has-filter="ent">
+			<div class="view">
+				<img src="img/ent-review-1.jpg" alt="Skybox club">
+			</div>
+			<div class="mark"></div>
+			<div class="brief">
+				<span class="caption">Skybox club</span>
+				<span class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+				<span class="amount">(1365)</span>				
+			</div>
+			<span class="user-rate">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+			<div class="user-review">
+				<div class="user-avatar">
+					<img src="img/user-id2.png" alt="Lucy-P">
+				</div>
+				<span class="username">Peter145</span>
+				<span class="cut-review">“Aliquam quis pulvinar purus. Etiam cursus ipsum quis enim faucibus, quis posuere orci ornare. Duis mattis sagittis fringilla.” <a href="#" class="read-more">...read more</a></span>
+			</div>
+		</div>	
+				
+		<div class="more">
+			<a href="#"><span class="lead">Lead more</span><span> →</span></a>
+		</div>
+	</section>
+<!--	CONTENT END-->
+<!--OFFERS START-->
+	<section class="offers">
+		<h2 class="offers__quest">What can DuHoot offer to you?</h2>
+		<span class="offers__descr">Etiam cursus ipsum quis enim faucibus</span>
+		<div class="slider">
+			<ul class="radios" id="radios">
+				<li class="radio radio-real radio-active" data-radio="Real"></li>
+				<li class="radio radio-liv" data-radio="Liv"></li>
+				<li class="radio radio-edu" data-radio="Edu"></li>
+				<li class="radio radio-ent" data-radio="Ent"></li>
+				<li class="radio radio-mob" data-radio="Mob"></li>
+			</ul>
+			<div class="blocks blocks-real" id="blocksReal" style="display: block;">
+				<h3>Reality</h3>
+				<p class="block">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi gravida tellus in purus pharetra, vel dignissim mauris viverra. Maecenas vitae risus est. In hendrerit, massa at.</p>
+				<p class="block">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi gravida tellus in purus pharetra, vel dignissim mauris viverra. Maecenas vitae risus est. In hendrerit, massa at.</p>
+			</div>
+			<div class="blocks blocks-liv" id="blocksLiv">
+				<h3>Living</h3>
+				<p class="block">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi gravida tellus in purus pharetra, vel dignissim mauris viverra. Maecenas vitae risus est. In hendrerit, massa at.</p>
+				<p class="block">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi gravida tellus in purus pharetra, vel dignissim mauris viverra. Maecenas vitae risus est. In hendrerit, massa at.</p>
+			</div>
+			<div class="blocks blocks-edu" id="blocksEdu">
+				<h3>Education</h3>
+				<p class="block">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi gravida tellus in purus pharetra, vel dignissim mauris viverra. Maecenas vitae risus est. In hendrerit, massa at.</p>
+				<p class="block">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi gravida tellus in purus pharetra, vel dignissim mauris viverra. Maecenas vitae risus est. In hendrerit, massa at.</p>
+			</div>
+			<div class="blocks blocks-ent" id="blocksEnt">
+				<h3>Entertainment</h3>
+				<p class="block">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi gravida tellus in purus pharetra, vel dignissim mauris viverra. Maecenas vitae risus est. In hendrerit, massa at.</p>
+				<p class="block">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi gravida tellus in purus pharetra, vel dignissim mauris viverra. Maecenas vitae risus est. In hendrerit, massa at.</p>
+			</div>
+			<div class="blocks blocks-mob" id="blocksMob">
+				<h3>Mobility</h3>
+				<p class="block">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi gravida tellus in purus pharetra, vel dignissim mauris viverra. Maecenas vitae risus est. In hendrerit, massa at.</p>
+				<p class="block">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi gravida tellus in purus pharetra, vel dignissim mauris viverra. Maecenas vitae risus est. In hendrerit, massa at.</p>
+			</div>
+		</div>
+	</section>
+<!--	OFFERS END-->
+<!--FOOTER START-->
+	<div class="wrap-footer">
+		<footer class="footer-site">
+			<h2 class="footer-head">Subscribe to our newsletter</h2>
+			<form action="#" class="footer-site-form">
+				<div class="subscr">
+					<input type="text" placeholder="your@email.com">
+					<input type="button" value="Subscribe">					
+				</div>
+			</form>
+			<div class="lists">
+				<ul>
+					<li>Lorem ipsum</li>
+					<li><a href="#">Aliquam quis</a></li>
+					<li><a href="#">Pulvinar purus</a></li>
+					<li><a href="#">Etiam cursus</a></li>
+					<li><a href="#">Ipsum quis</a></li>
+					<li><a href="#">Enim faucibus</a></li>
+				</ul>
+				<ul>
+					<li>Lorem ipsum</li>
+					<li><a href="#">Aliquam quis</a></li>
+					<li><a href="#">Pulvinar purus</a></li>
+					<li><a href="#">Etiam cursus</a></li>
+					<li><a href="#">Ipsum quis</a></li>
+					<li><a href="#">Enim faucibus</a></li>
+				</ul>
+				<ul>
+					<li>Follow us</li>
+					<li>
+						<a href="#">&#xf09a;</a>
+						<a href="#">&#xf099;</a>
+						<a href="#">&#xf0d5;</a>
+						<a href="#">&#xf167;</a>
+					</li>				
+					<li class="copyright">Copyright © All Rights reserved</li>
+				</ul>				
+			</div>
+		</footer>
+	</div>
+<!--	FOOTER END-->
+
+	<script src="js/smooth-scroll.min.js"></script>
+	<script src="js/common.min.js"></script>
+</body>
+</html>
